@@ -202,6 +202,71 @@ nav.links a:hover { color: var(--wine); }
   .hero .container { grid-template-columns: 1fr; gap: 36px; }
   .hero-figure { max-width: 360px; margin: 0 auto; }
 }
+
+/* Sections, general */
+.section { padding: 72px 0; }
+.section-alt { background: var(--cream-2); }
+.section h2 {
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  margin-bottom: 14px;
+}
+.section .eyebrow { margin-bottom: 10px; }
+.section-head { max-width: 640px; margin-bottom: 44px; }
+
+/* Sobre */
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.sobre-grid > * { min-width: 0; }
+.sobre-grid p { color: var(--text-dim); margin-bottom: 16px; font-size: 1.02rem; }
+.callout {
+  background: var(--wine);
+  color: var(--cream);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.callout img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
+.callout-body { padding: 26px 28px 30px; }
+.callout-body .sci { font-style: italic; opacity: 0.85; font-size: 0.9rem; display: block; margin-bottom: 10px; }
+.callout-body p { font-size: 0.96rem; line-height: 1.6; opacity: 0.95; }
+.callout-body p + p { margin-top: 12px; }
+
+/* Equipe */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+.team-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  gap: 20px;
+}
+.team-card img {
+  width: 96px;
+  height: 128px;
+  object-fit: cover;
+  border-radius: 14px;
+  flex-shrink: 0;
+}
+.team-card h3 { font-size: 1.25rem; margin-bottom: 2px; }
+.team-card .role { font-size: 0.85rem; color: var(--text-dim); font-weight: 500; margin-bottom: 10px; display: block; }
+.team-card p { font-size: 0.92rem; color: var(--text-dim); }
+
+@media (max-width: 860px) {
+  .sobre-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .team-card { flex-direction: column; }
+  .team-card img { width: 100%; height: 220px; }
+}
 </style>
 </head>
 <body>
@@ -244,6 +309,52 @@ nav.links a:hover { color: var(--wine); }
       </div>
       <div class="hero-figure">
         <img src="assets/hero.jpg" alt="Paisagem de campo nativo do bioma Pampa, com flores e vegetação típica"/>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sobre">
+    <div class="container sobre-grid">
+      <div>
+        <p class="eyebrow">Sobre a Garupá</p>
+        <h2>Uma consultoria pensada para quem recupera e protege o território</h2>
+        <p>Somos uma empresa criada em 2023 para atuar como consultoria especializada na elaboração e implementação de projetos vinculados à conservação e restauração da vegetação nativa nos biomas Pampa e Mata Atlântica, no Rio Grande do Sul.</p>
+        <p>Atuamos junto a organizações parceiras para o cumprimento de normas ambientais relacionadas à conversão da paisagem natural, unindo rigor técnico a um compromisso real com a sustentabilidade e com o território.</p>
+      </div>
+      <div class="callout">
+        <img src="assets/garupa-flower.jpg" alt="Flores brancas da planta garupá (Aloysia gratissima)"/>
+        <div class="callout-body">
+          <span class="sci">Aloysia gratissima (Verbenaceae)</span>
+          <p>Conhecida como garupá, é um arbusto nativo dos biomas Pampa e Mata Atlântica — perene, de folhas pequenas e flores delicadas, com uso tradicional na medicina popular.</p>
+          <p>Para nós, ela simboliza a riqueza das espécies nativas e o patrimônio natural que pode ser redescoberto por um olhar atento sobre a biodiversidade local.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="equipe">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Equipe</p>
+        <h2>Quem está por trás dos projetos</h2>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="assets/camila.jpg" alt="Camila Leal Bonilha"/>
+          <div>
+            <h3>Camila Leal Bonilha</h3>
+            <span class="role">Bióloga, Dra. em Botânica</span>
+            <p>Possui experiência como analista ambiental, em análise de Planos de Recuperação de Áreas Degradadas (PRADs), Estudos de Impacto Ambiental Simplificados (EIAS) e outros estudos ambientais.</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="assets/mariana.jpg" alt="Mariana de Souza Vieira"/>
+          <div>
+            <h3>Mariana de Souza Vieira</h3>
+            <span class="role">Bióloga, Dra. em Botânica</span>
+            <p>Possui experiência com restauração de áreas degradadas, controle de espécies exóticas invasoras e elaboração de estudos de flora. Atua na elaboração, gestão e implementação de projetos de restauração.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
