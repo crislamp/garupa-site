@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://crislamp.github.io/garupa-site/sitemap.xml
