@@ -35,7 +35,7 @@
   --cream: #fffbf5;
   --cream-2: #f4ece0;
   --text: #2a2420;
-  --text-dim: #7a6c60;
+  --text-dim: #665a4f;
   --border: rgba(115,2,44,0.16);
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Jost', 'Helvetica Neue', Arial, sans-serif;
@@ -138,14 +138,15 @@ nav.links {
 nav.links a { position: relative; padding: 4px 0; }
 nav.links a:hover { color: var(--wine); }
 
-/* mobile nav via checkbox hack */
-#nav-toggle { display: none; }
+/* mobile nav */
 .hamburger {
   display: none;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
   padding: 6px;
+  background: none;
+  border: none;
 }
 .hamburger span {
   width: 24px;
@@ -153,6 +154,7 @@ nav.links a:hover { color: var(--wine); }
   background: var(--wine);
   display: block;
 }
+.hamburger:focus-visible { outline: 2px solid var(--wine); outline-offset: 2px; }
 
 @media (max-width: 860px) {
   nav.links {
@@ -165,11 +167,12 @@ nav.links a:hover { color: var(--wine); }
     gap: 0;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.25s ease;
+    visibility: hidden;
+    transition: max-height 0.25s ease, visibility 0s linear 0.25s;
     border-bottom: 1px solid var(--border);
   }
   nav.links a { padding: 14px 24px; border-top: 1px solid var(--border); }
-  #nav-toggle:checked ~ nav.links { max-height: 420px; }
+  nav.links.open { max-height: 420px; visibility: visible; transition: max-height 0.25s ease; }
   .hamburger { display: flex; }
 }
 
@@ -270,7 +273,7 @@ nav.links a:hover { color: var(--wine); }
 }
 @media (max-width: 520px) {
   .team-card { flex-direction: column; }
-  .team-card img { width: 100%; height: 220px; }
+  .team-card img { width: 100%; max-width: 220px; height: auto; aspect-ratio: 3/4; margin: 0 auto; }
 }
 
 /* Serviços */
@@ -391,11 +394,10 @@ footer .foot-logo img { height: 28px; width: auto; }
         <span class="tagline">Projetos e Pesquisas Ambientais</span>
       </span>
     </a>
-    <input type="checkbox" id="nav-toggle"/>
-    <label for="nav-toggle" class="hamburger" aria-label="Abrir menu">
+    <button type="button" class="hamburger" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links">
       <span></span><span></span><span></span>
-    </label>
-    <nav class="links">
+    </button>
+    <nav class="links" id="nav-links">
       <a href="#sobre">Sobre</a>
       <a href="#equipe">Equipe</a>
       <a href="#servicos">Serviços</a>
@@ -405,6 +407,23 @@ footer .foot-logo img { height: 28px; width: auto; }
     </nav>
   </div>
 </header>
+<script>
+(function () {
+  var toggle = document.getElementById('nav-toggle');
+  var nav = document.getElementById('nav-links');
+  function closeNav() {
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+  toggle.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', closeNav);
+  });
+})();
+</script>
 
 <main id="top">
   <section class="hero">
@@ -510,7 +529,7 @@ footer .foot-logo img { height: 28px; width: auto; }
     <div class="container">
       <div class="section-head">
         <p class="eyebrow">Projetos</p>
-        <h2>Alguns dos trabalhos que já desenvolvemos</h2>
+        <h2>Tipos de projeto que realizamos</h2>
       </div>
       <div class="case-grid">
         <!-- PLACEHOLDER: replace with a real case from Camila/Mariana (client/project type, what was done, outcome) -->
