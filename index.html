@@ -305,6 +305,27 @@ nav.links a:hover { color: var(--wine); }
 @media (max-width: 520px) {
   .service-grid { grid-template-columns: 1fr; }
 }
+
+/* Projetos / Cases */
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.case-card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--cream);
+}
+.case-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.case-card-body { padding: 20px 22px 24px; }
+.case-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+.case-card p { font-size: 0.92rem; color: var(--text-dim); }
+
+@media (max-width: 860px) {
+  .case-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
@@ -429,6 +450,41 @@ nav.links a:hover { color: var(--wine); }
       <div class="atuacao-photos">
         <img src="assets/fieldwork-1.jpg" alt="Equipe da Garupá realizando levantamento de vegetação em campo"/>
         <img src="assets/fieldwork-2.jpg" alt="Medição de vegetação nativa com trena em área de campo"/>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projetos">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Projetos</p>
+        <h2>Alguns dos trabalhos que já desenvolvemos</h2>
+      </div>
+      <div class="case-grid">
+        <!-- PLACEHOLDER: replace with a real case from Camila/Mariana (client/project type, what was done, outcome) -->
+        <div class="case-card">
+          <img src="assets/case-fieldwork.jpg" alt="Levantamento de vegetação em área de restauração"/>
+          <div class="case-card-body">
+            <h3>Recuperação de área degradada</h3>
+            <p>Levantamento de flora, elaboração de PRAD e acompanhamento técnico da implantação.</p>
+          </div>
+        </div>
+        <!-- PLACEHOLDER: replace with a real case from Camila/Mariana (client/project type, what was done, outcome) -->
+        <div class="case-card">
+          <img src="assets/fieldwork-2.jpg" alt="Medição de vegetação nativa em campo"/>
+          <div class="case-card-body">
+            <h3>Licenciamento ambiental</h3>
+            <p>Estudos técnicos e interface com o órgão ambiental para viabilização de empreendimento.</p>
+          </div>
+        </div>
+        <!-- PLACEHOLDER: replace with a real case from Camila/Mariana (client/project type, what was done, outcome) -->
+        <div class="case-card">
+          <img src="assets/hero.jpg" alt="Área de campo nativo avaliada pela equipe"/>
+          <div class="case-card-body">
+            <h3>Laudo de flora e fauna</h3>
+            <p>Diagnóstico de cobertura vegetal e identificação de espécies para subsidiar processo de licenciamento.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
