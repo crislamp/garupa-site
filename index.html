@@ -360,6 +360,8 @@ nav.links a:hover { color: var(--wine); }
 .contact-item a { font-size: 1rem; }
 .contact-item a:hover { text-decoration: underline; }
 .contact-item .label { display: block; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.65; margin-bottom: 2px; }
+.contact-item-whatsapp { background: rgba(255,251,245,0.1); border-color: rgba(255,251,245,0.5); border-width: 1.5px; }
+.contact-item-whatsapp .label { opacity: 0.85; font-weight: 500; }
 
 @media (max-width: 860px) {
   .contato-grid { grid-template-columns: 1fr; }
@@ -381,6 +383,8 @@ footer .container {
 }
 footer .foot-logo { display: flex; align-items: center; gap: 10px; }
 footer .foot-logo img { height: 28px; width: auto; }
+footer a { color: rgba(255,251,245,0.9); text-decoration: underline; text-underline-offset: 2px; }
+footer a:hover { color: var(--cream); }
 </style>
 </head>
 <body>
@@ -433,8 +437,8 @@ footer .foot-logo img { height: 28px; width: auto; }
         <h1>Recuperar o que foi degradado. Proteger o que ainda resiste.</h1>
         <p class="lead">A Garupá é uma consultoria ambiental especializada em licenciamento, recuperação de áreas degradadas e conservação da biodiversidade nos biomas Pampa e Mata Atlântica, no Rio Grande do Sul.</p>
         <div class="cta-row">
-          <a href="#servicos" class="btn btn-solid">Conheça os serviços</a>
-          <a href="#contato" class="btn btn-outline">Fale conosco</a>
+          <a href="https://wa.me/5553984215503" target="_blank" rel="noopener" class="btn btn-solid">Fale no WhatsApp</a>
+          <a href="#servicos" class="btn btn-outline">Conheça os serviços</a>
         </div>
       </div>
       <div class="hero-figure">
@@ -568,18 +572,18 @@ footer .foot-logo img { height: 28px; width: auto; }
         <p class="lead">Fale com a gente por telefone, WhatsApp ou e-mail — contamos um pouco sobre o seu projeto e indicamos os próximos passos.</p>
       </div>
       <div class="contact-list">
-        <div class="contact-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        <div class="contact-item contact-item-whatsapp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.66 15l-1.06 4.24a1 1 0 0 0 1.22 1.22L7.74 21.3A10 10 0 1 0 12 2Zm5.07 14.26c-.22.62-1.28 1.18-1.77 1.25-.45.07-1.02.1-1.65-.1a14 14 0 0 1-2.1-.78 11.2 11.2 0 0 1-4.25-3.76 4.9 4.9 0 0 1-1-2.6c0-.77.4-1.14.55-1.3.14-.15.31-.19.42-.19h.3c.1 0 .24 0 .37.28l.63 1.5c.06.14.1.3.02.47-.08.17-.12.27-.24.4l-.33.37c-.1.1-.2.21-.09.42a8.6 8.6 0 0 0 1.57 1.96 7.8 7.8 0 0 0 2.27 1.4c.21.1.33.08.46-.05.13-.13.52-.6.66-.8.14-.2.28-.17.46-.1l1.46.69c.17.08.28.12.32.2.05.08.05.47-.17 1.09Z"/></svg>
           <div>
-            <span class="label">Camila</span>
-            <a href="tel:+5551982883311">51 98288-3311</a>
+            <span class="label">WhatsApp · Mariana</span>
+            <a href="https://wa.me/5553984215503" target="_blank" rel="noopener">53 98421-5503</a>
           </div>
         </div>
         <div class="contact-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
           <div>
-            <span class="label">Mariana</span>
-            <a href="tel:+5553984215503">53 98421-5503</a>
+            <span class="label">Camila</span>
+            <a href="tel:+5551982883311">51 98288-3311</a>
           </div>
         </div>
         <div class="contact-item">
@@ -598,9 +602,9 @@ footer .foot-logo img { height: 28px; width: auto; }
   <div class="container">
     <div class="foot-logo">
       <img src="assets/logo-mark-white.png" alt="Garupá"/>
-      <span>© 2025 Garupá — Projetos e Pesquisas Ambientais</span>
+      <span>© 2026 Garupá — Projetos e Pesquisas Ambientais</span>
     </div>
-    <span>Pampa &amp; Mata Atlântica · Rio Grande do Sul</span>
+    <span>Site por <a href="https://studio.crislapott.com/" target="_blank" rel="noopener">Pott Product Studio</a></span>
   </div>
 </footer>
 
